@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Cek Saldo</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -17,9 +17,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="home">Home</a>
+            <a class="nav-item nav-link " href="home">Home</a>
             <a class="nav-item nav-link" href="/profile">Profile</a>
-            <a class="nav-item nav-link" href="/ceksaldo">Cek Saldo</a>
+            <a class="nav-item nav-link active" href="/ceksaldo">Cek Saldo</a>
           </div>
         </div>
   
@@ -27,24 +27,22 @@
 
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb p-2">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Cek Saldo</a></li>
           <li class="breadcrumb-item active" aria-current="page">IT Perbankan</li>
         </ol>
       </nav>
 
       <div class="card" style="width: auto;">
-        <img class="card-img-top" style="width: 15rem; "  src="https://www.w3schools.com/bootstrap4/img_avatar3.png" alt="Card image cap">
+        {{-- <img class="card-img-top" style="width: 15rem; "  src="https://www.w3schools.com/bootstrap4/img_avatar3.png" alt="Card image cap"> --}}
         <div class="card-body">
-          <h5 class="card-title">Login Berhasil, Selamat Datang</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <!-- <a href="{{ url('api/logout') }}" class="btn btn-primary">Logout</a> -->
-
-        <form action="{{ url('api/logout') }}" method="post">
-            @csrf <!-- Tambahkan ini untuk mengamankan formulir Anda -->
-            <button type="submit" class="btn btn-danger p-2">Logout</button>
-            <a href="/profile" class="btn btn-warning p-2">Profile</a>
-        </form>
-        
+            <div class="card bg-dark text-white">
+                <img class="card-img" style="width: 15rem" src="https://www.w3schools.com/bootstrap4/img_avatar3.png" alt="Card image">
+                <div class="card-img-overlay">
+                  <h5 class="card-title">BANK IT PERBANKAN</h5>
+                  <p class="card-text p-5 shadow" style="text-color: red">0188281289812381293</p>
+                  <p class="card-text">12/12/2028</p>
+                </div>
+              </div>
         </div>
       </div>
       

@@ -18,12 +18,12 @@
 
 
         <div class="login form">
-            <header>Login</header>
+            <header><b>Login User <br> Banking</b></header>
             <form action="{{ url('api/login') }}" method="post">
-                <input type="email" name="email" placeholder="Enter your email">
-                <input type="password" name="password" placeholder="Enter your password">
+                <input type="email" required name="email" placeholder="Enter your email">
+                <input type="password" required name="password" placeholder="Enter your password">
                 <a href="#">Forgot password?</a>
-                <input type="submit" class="button" value="Login">
+                <input type="submit" class="btn btn-info" value="Login">
             </form>
             <div class="signup">
                 <span class="signup">Don't have an account?
