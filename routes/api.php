@@ -3,6 +3,12 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Api\LoginController;
+use App\Http\Controllers\Api\RegisterController;
+use App\Http\Controllers\Api\LogoutController;
+use App\Http\Controllers\HomeController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,33 +20,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+// Route::post('/register', App\Http\Controllers\Api\RegisterController::class)->name('register');
 
-/**
- * route "/register"
- * @method "POST"
- */
-Route::post('/register', App\Http\Controllers\Api\RegisterController::class)->name('register');
+// Route::post('/login', App\Http\Controllers\Api\LoginController::class)->name('login');
 
-/**
- * route "/login"
- * @method "POST"
- */
-Route::post('/login', App\Http\Controllers\Api\LoginController::class)->name('login');
+// Route::post('/logout', App\Http\Controllers\Api\LogoutController::class)->name('logout');
 
-/**
- * route "/user"
- * @method "GET"
- */
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-/**
- * route "/logout"
- * @method "POST"
- */
-Route::post('/logout', App\Http\Controllers\Api\LogoutController::class)->name('logout');
 
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::namespace('api')->group(function () {
+    Route::post('/register', 'LoginController')->name('register');
+    Route::post('/login', 'LoginController')->name('login');
+    Route::post('/logout', 'LogoutController')->name('logout');
+});
