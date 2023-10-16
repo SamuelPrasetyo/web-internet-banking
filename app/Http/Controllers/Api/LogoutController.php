@@ -19,12 +19,10 @@ class LogoutController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $token = $request->input('token');
-        
-        auth()->logout();
+        //remove token
+        $removeToken = JWTAuth::invalidate(JWTAuth::getToken());
 
-        // //remove token
-        // $removeToken = JWTAuth::invalidate(JWTAuth::getToken());
+        auth()->logout();
 
         // if($removeToken) {
         //     return redirect('/');

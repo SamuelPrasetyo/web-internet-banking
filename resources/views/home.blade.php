@@ -40,7 +40,6 @@
                   <!-- <a href="{{ url('api/logout') }}" class="btn btn-primary">Logout</a> -->
 
         <form action="{{ url('api/logout') }}" method="post">
-            @csrf <!-- Tambahkan ini untuk mengamankan formulir Anda -->
             <button type="submit" class="btn btn-danger p-2">Logout</button>
             <a href="/profile" class="btn btn-warning p-2">Profile</a>
         </form>
